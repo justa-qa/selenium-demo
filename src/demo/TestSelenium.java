@@ -77,12 +77,15 @@ public class TestSelenium {
 		
 		driver.findElements(By.cssSelector("input.btn-primary")).get(nextInt).click();
 		
-		
 		//String price = driver.findElements(By.xpath("//*[@id='content']/table/tbody[1]/tr[3]")).get(nextInt).getText();
 		
-		//driver.findElement(By.xpath("//*[@id='cart']/button")).click();
 		
+		WebDriverWait wait5 = new WebDriverWait(driver, 10);
+		WebElement shoppingCard = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='cart']/button")));
 		
+		driver.findElement(By.xpath("//*[@id='cart']/button")).click();
+		
+		driver.findElement(By.xpath("//*[@id='cart']/ul/li[2]/div/p/a[1]/strong")).click();
 		
 		
 
